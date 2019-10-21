@@ -44,15 +44,22 @@ class GameBoardBloc extends Bloc<GameBoardEvent, GameBoardState> {
   @override
   Stream<GameBoardState> mapEventToState(GameBoardEvent event) async* {
     if (event is NewGameEvent) {
+      ///new game start event
       if (event.gameLevel != null) selectGameLevel = event.gameLevel;
+
+      /// generate board
       mineBoard = MineBoard(gameLevel: selectGameLevel);
+
+      ///reset game status
       gameStatus = GameStatus.BEGIN;
 
       yield GameInitState();
     } else if (event is UserBoardActionEvent) {
       /// check if user start the game
       if (gameStatus == GameStatus.BEGIN) {
+        ///set game status
         gameStatus = GameStatus.IN_PROCESS;
+        ///start timing
         yield TimingStartState();
         await Future.delayed(Duration(milliseconds: 100));
       }
@@ -98,6 +105,7 @@ class GameBoardBloc extends Bloc<GameBoardEvent, GameBoardState> {
               if (checkIsWin()) {
                 gameStatus = GameStatus.WIN;
 
+                /// if user win, open all the tile
                 openAllTilesInTheBoard(true);
                 yield GameWinState();
 
@@ -110,6 +118,7 @@ class GameBoardBloc extends Bloc<GameBoardEvent, GameBoardState> {
             break;
           case UserAction.LONG_CLICK:
             if (tile.isOpen) return;
+
             tile.toNextMarkStatus();
 
             yield BoardRefreshState();
@@ -170,6 +179,7 @@ class GameBoardBloc extends Bloc<GameBoardEvent, GameBoardState> {
     return totalClosedSafeTile == mineBoard.bombNumber;
   }
 
+  /// open the tile until meet opened or around bomb number more than 0
   void processSuperSafeBoard(List<List<bool>> seen, int x, int y) {
     if (x < 0 ||
         x >= mineBoard.boardHeight ||

@@ -3,7 +3,7 @@ import 'package:mine_sweeping/blocs/game_board_bloc.dart';
 import 'package:mine_sweeping/constant/strings.dart';
 import 'package:mine_sweeping/pages/page/control_setting_dialog_page.dart';
 import 'package:mine_sweeping/pages/page/display_setting_dialog_page.dart';
-import 'package:mine_sweeping/pages/page/game_dialog_page.dart';
+import 'package:mine_sweeping/pages/page/game_setting_dialog_page.dart';
 
 class HomeTopBar extends StatelessWidget {
   final GameBoardBloc bloc;
@@ -17,6 +17,7 @@ class HomeTopBar extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
+          /// game setting
           GestureDetector(
             onTap: () {
               showDialog(
@@ -32,6 +33,7 @@ class HomeTopBar extends StatelessWidget {
                     decoration: TextDecoration.none,
                     color: Colors.blueAccent)),
           ),
+          /// divider
           Padding(
             padding: const EdgeInsets.only(left: 4.0, right: 4),
             child: Container(
@@ -40,6 +42,7 @@ class HomeTopBar extends StatelessWidget {
               height: 10,
             ),
           ),
+          ///game display setting
           GestureDetector(
             child: Text(LocalString.home_bar_option_display,
                 style: TextStyle(
@@ -55,10 +58,12 @@ class HomeTopBar extends StatelessWidget {
                   });
             },
           ),
+          /// divider
           Padding(
             padding: const EdgeInsets.only(left: 4.0, right: 4),
             child: Container(width: 1, color: Colors.black, height: 10),
           ),
+          ///game control insturction
           GestureDetector(
             child: Text(LocalString.home_bar_option_controls,
                 style: TextStyle(

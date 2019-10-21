@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mine_sweeping/constant/colors.dart';
 import 'package:mine_sweeping/constant/strings.dart';
 
+///Setting dialog for explaining the control instruction for user
+///
+/// display based on [HomeTopBar]
+/// other setting page [DisplaySettingDialog] [GameSettingDialog]
 class ControlSettingDialog extends Dialog {
   ControlSettingDialog();
 
@@ -42,7 +46,6 @@ class ControlSettingDialog extends Dialog {
               ],
             ),
           ),
-          //zoom
           Row(
             children: <Widget>[
               Expanded(
@@ -86,7 +89,6 @@ class ControlSettingDialog extends Dialog {
               )
             ],
           ),
-          //position
         ],
       ),
     );

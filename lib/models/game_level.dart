@@ -2,6 +2,14 @@ import 'package:mine_sweeping/constant/strings.dart';
 
 import 'base/base_enum.dart';
 
+
+///game level
+///need for building the game board [MineBoard]
+///
+/// [width] board width
+/// [height] board height
+/// [bombNumber] bomb amount in the game
+
 class GameLevel extends BaseEnum {
   final int width;
   final int height;

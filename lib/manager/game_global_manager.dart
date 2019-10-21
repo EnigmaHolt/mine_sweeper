@@ -8,6 +8,8 @@ class GameGlobalManager {
 
   GameGlobalManager._internal();
 
+  /// customized game level by user
+  /// default one
   GameLevel customizedGameLevel = GameLevel(30, 20, 145, 3, LocalString.game_setting_custom);
 
 

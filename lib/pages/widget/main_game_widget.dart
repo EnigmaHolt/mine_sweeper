@@ -51,6 +51,8 @@ class _MainGameWidgetState extends State<MainGameWidget> {
 
     bloc.listen((state){
       if(state is GameWinState){
+
+        ///if user win, ask user to upload their record.
         showDialog(
             context: context,
             builder: (context) {
@@ -104,20 +106,25 @@ class _MainGameWidgetState extends State<MainGameWidget> {
       bloc: bloc,
       builder: (context, state) {
         if (state is GameOverState) {
+          /// game failed
           timeCountKey.currentState?.pause();
         }
 
         if (state is GameWinState) {
+
+          /// game win
           timeCountKey.currentState?.pause();
 
 
         }
 
         if (state is TimingStartState) {
+          ///start counting time
           timeCountKey.currentState?.start();
         }
 
         if (state is GameInitState) {
+          ///new game
           timeCountKey.currentState?.reset();
         }
 

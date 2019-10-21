@@ -19,4 +19,6 @@ class BoardConfig {
   double boardEdgeWidth;
   double controlBarHeight;
 
+
+
 }

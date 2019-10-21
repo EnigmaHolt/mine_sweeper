@@ -1,11 +1,7 @@
 import 'dart:ui';
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:mine_sweeping/common/board_config.dart';
 import 'package:mine_sweeping/constant/colors.dart';
-import 'package:mine_sweeping/constant/icons.dart';
-import 'package:mine_sweeping/helper/format_helper.dart';
 
 class BoardBuilderHelper {
   static Color getColorByAroundBombNumber(int number) {

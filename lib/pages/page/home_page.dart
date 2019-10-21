@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mine_sweeping/blocs/game_board_bloc.dart';
-import 'package:mine_sweeping/common/board_config.dart';
 import 'package:mine_sweeping/data/state/game_board_state.dart';
 import 'package:mine_sweeping/pages/widget/home_top_bar.dart';
 import 'package:mine_sweeping/pages/widget/main_game_widget.dart';
@@ -15,6 +14,12 @@ class _MainPageState extends State<MainPage> {
   GameBoardBloc bloc = GameBoardBloc();
 
   int position = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -32,14 +37,17 @@ class _MainPageState extends State<MainPage> {
           }
 
           return Padding(
-            padding: EdgeInsets.only(
-                left: position == 0 ? 200 : 10, top: 30),
+            padding: EdgeInsets.only(left: position == 0 ? 200 : 10, top: 30),
             child: Container(
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[HomeTopBar(bloc), MainGameWidget(bloc)],
+                  children: <Widget>[
+                    HomeTopBar(bloc),
+                    MainGameWidget(bloc),
+                    SizedBox(height: 30,),
+                  ],
                 ),
               ),
             ),

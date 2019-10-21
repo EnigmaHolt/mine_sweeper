@@ -1,5 +1,3 @@
-import 'package:mine_sweeping/data/enum_game_status.dart';
-import 'package:mine_sweeping/data/enum_user_action.dart';
 import 'package:mine_sweeping/models/base/base_board_tile.dart';
 import 'package:mine_sweeping/models/bomb_board_tile.dart';
 import 'package:mine_sweeping/models/game_level.dart';
@@ -7,6 +5,14 @@ import 'package:mine_sweeping/models/safe_board_tile.dart';
 
 import 'board_build_strategy.dart';
 
+
+///main game board
+///[gameLevel] game level
+///[tiles] total tiles in the board contains[BombBoardTile] and [SafeBoardTile]
+///[totalTiles] total tiles amount in the board
+///[boardHeight] board height
+///[boardWidth] board width
+///[bombNumber] total bomb number in the board
 class MineBoard {
   final GameLevel gameLevel;
 

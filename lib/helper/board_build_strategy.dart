@@ -1,12 +1,14 @@
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
 import 'package:mine_sweeping/constant/strings.dart';
 import 'package:mine_sweeping/models/base/base_board_tile.dart';
 import 'package:mine_sweeping/models/bomb_board_tile.dart';
-import 'package:mine_sweeping/models/game_level.dart';
 import 'package:mine_sweeping/models/safe_board_tile.dart';
 
+
+/// decide how to build the whole board.
+///
+/// [MineBoard]
 abstract class BoardBuildStrategy {
   factory BoardBuildStrategy(
       {BoardBuildStrategyType type = BoardBuildStrategyType.RANDOM}) {

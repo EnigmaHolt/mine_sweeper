@@ -13,6 +13,12 @@ import 'package:mine_sweeping/manager/game_global_manager.dart';
 import 'package:mine_sweeping/data/event/game_board_event.dart';
 import 'package:mine_sweeping/models/game_level.dart';
 
+
+///Setting dialog for setting game
+///
+/// display based on [HomeTopBar]
+/// other setting page [ControlSettingDialog] [DisplaySettingDialog]
+
 class GameSettingDialog extends Dialog {
   final GameBoardBloc bloc;
 

@@ -6,6 +6,13 @@ import 'package:mine_sweeping/constant/colors.dart';
 import 'package:mine_sweeping/constant/strings.dart';
 import 'package:mine_sweeping/data/event/game_board_event.dart';
 
+
+
+///Setting dialog for controlling the board display size
+///
+/// display based on [HomeTopBar]
+/// other setting page [ControlSettingDialog] [GameSettingDialog]
+
 class DisplaySettingDialog extends Dialog {
   final GameBoardBloc bloc;
 
